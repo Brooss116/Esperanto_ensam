@@ -1,0 +1,36 @@
+type Mutation {
+    createUser(
+        firstname: String!,
+        lastname: String!,
+        email: String!,
+        password: String!,
+        phoneNumber: String,
+        role: String,
+        healthNetwork: String,
+        professionalStatus: String,
+        experiences: String,
+        description: String,
+        profilePicture: String
+    ): User
+    createIndustrial(
+        userId: ID,
+        industrialData: IndustrialData
+    ): User
+    createHealthActor(
+        userId: ID,
+        healthActorData: HealthActorData
+    ): User
+    createResearcher(
+        userId: ID,
+        researcherData: ResearcherData
+    ): User
+    addFollow(
+        userId: ID
+        followerId: ID
+    ): String
+    removeFollow(
+        userId: ID
+        followerId: ID
+    ): String
+    logUser(email: String, password: String): User
+}

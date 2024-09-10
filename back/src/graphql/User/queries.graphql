@@ -1,0 +1,9 @@
+type Query {
+    users: [User]
+    userById(userId: ID): User
+    usersByTagUser(userId: ID): [User]
+    usersByTagNeed(userId: ID, needId: ID): [User]
+    getAllFollowers(userId: ID): [User]
+    getAllFollowing(userId: ID): [User]
+    checkIsFollowed(userId: ID, followerId: ID): Boolean
+}

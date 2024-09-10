@@ -1,0 +1,62 @@
+type User {
+    id: ID!
+    firstname: String!
+    lastname: String!
+    email: String!
+    password: String!
+    role: String!
+    phoneNumber: String
+    healthNetwork: String
+    professionalStatus: String
+    experiences: String
+    description: String
+    profilePicture: String
+    profileBanner: String
+    industrial: Industrial 
+    healthActor: HealthActor
+    researcher: Researcher
+    tags: [Tag]
+    needs: [Need]
+}
+type Industrial {
+    id: ID!
+    companyName : String
+}
+type HealthActor {
+    id: ID!
+    careServiceType: String
+    supportServices: String
+    professional: Professional
+}
+type Researcher {
+    id: ID!
+    researchUnitName: String
+    researchDepartment: String
+    researchArea: String
+}
+type Tag {
+    id: ID!
+    name: String!
+}
+type Professional {
+    id: ID!
+    name: String!
+}
+type Need {
+    id: ID!
+    title: String!
+    description: String!
+    type: String!
+    infrastructure: String
+    tags: [Tag]
+    professionals: [Professional]
+    materials: [Material]
+    user: User
+}
+type Material {
+    id: ID!
+    name: String!
+    resourceLink: String!
+    resourceImage: String
+    description: String
+}
